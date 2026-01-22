@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProPet | Focus & Evolve</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/screens/selection.css" />
+    <link rel="stylesheet" href="css/screens/active-session.css" />
+    <link rel="stylesheet" href="css/screens/victory.css" />
+    <link rel="stylesheet" href="css/screens/collection.css" />
+    <link rel="stylesheet" href="css/screens/evolution.css" />
+    <link rel="stylesheet" href="css/screens/overlay.css" />
+    <link rel="stylesheet" href="css/zones/zone1-header.css" />
+    <link rel="stylesheet" href="css/zones/zone2-stage.css" />
+    <link rel="stylesheet" href="css/zones/zone3-controls.css" />
+
+    <link rel="icon" type="image/png" href="assets/eggs/normal_egg.png" />
+  </head>
+  <body class="theme-default">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+
+    <main id="propet-app">
+      <header>
+        <h1 class="logo">ProPet</h1>
+        <button id="collection-btn" onclick="handleNavClick()">My Pets</button>
+      </header>
+
+      <div id="streak-display" class="hidden">🔥 Day 1</div>
+
+      <section id="screen-selection" class="active-screen">
+        <div class="text-group">
+          <h2>Choose Your Focus</h2>
+          <p class="subtitle">Longer focus = Rarier eggs.</p>
+        </div>
+
+        <div class="egg-showcase">
+          <div class="egg-card" onclick="selectTier(1)">
+            <img src="assets/eggs/normal_egg.png" alt="Normal Egg" />
+            <span>Quick Focus</span>
+            <small>15 - 59 Mins</small>
+          </div>
+          <div class="egg-card" onclick="selectTier(2)">
+            <img src="assets/eggs/epic_egg.png" alt="Epic Egg" />
+            <span>Deep Work</span>
+            <small>1 - 3 Hours</small>
+          </div>
+          <div class="egg-card" onclick="selectTier(3)">
+            <img src="assets/eggs/legendary_egg.png" alt="Legendary Egg" />
+            <span>Monk Mode</span>
+            <small>3+ Hours</small>
+          </div>
+        </div>
+
+        <div class="time-setup">
+          <div class="input-group">
+            <label>Hrs</label>
+            <input type="number" id="hours-input" min="0" max="12" value="0" />
+          </div>
+          <span class="time-separator">:</span>
+          <div class="input-group">
+            <label>Mins</label>
+            <input
+              type="number"
+              id="minutes-input"
+              min="0"
+              max="59"
+              value="25"
+            />
+          </div>
+          <button id="start-btn" onclick="startProPet()">BEGIN</button>
+        </div>
+      </section>
+
+      <section id="screen-active" class="hidden-screen">
+        <div class="zone-header">
+          <span id="pet-stage-name">Incubation Phase</span>
+        </div>
+        <div class="zone-stage">
+          <div class="glow-effect"></div>
+          <img
+            id="pet-display"
+            src="assets/eggs/normal_egg.png"
+            alt="Current Pet"
+          />
+          <div class="platform"></div>
+        </div>
+        <div class="zone-controls">
+          <div id="timer-display">25:00</div>
+          <div class="progress-wrapper">
+            <div id="growth-bar"></div>
+          </div>
+          <button class="btn-giveup" onclick="giveUp()">Forfeit Session</button>
+        </div>
+      </section>
+
+      <section id="screen-victory" class="hidden-screen">
+        <h2 class="victory-title">Session Complete!</h2>
+        <div class="reward-box">
+          <img id="reward-pet-img" src="" alt="New Pet" />
+          <h3 id="reward-pet-name">You hatched a Cat!</h3>
+        </div>
+        <button onclick="resetApp()">Focus Again</button>
+      </section>
+
+      <section id="screen-collection" class="hidden-screen">
+        <div class="collection-header">
+          <h2>My Collection</h2>
+        </div>
+        <div id="collection-grid"></div>
+      </section>
+
+      <section id="screen-evolution" class="hidden-screen">
+        <div class="fusion-container">
+          <h2 class="fusion-title">FUSION INITIATED</h2>
+          <div class="fusion-stage">
+            <div class="sacrificial-pet p1"></div>
+            <div class="sacrificial-pet p2"></div>
+            <div class="sacrificial-pet p3"></div>
+            <div class="fusion-core"></div>
+          </div>
+          <div id="fusion-result" class="hidden">
+            <img id="mega-reveal-img" src="" alt="Mega Pet" />
+            <h3 id="mega-reveal-name">MEGA LION ACQUIRED!</h3>
+            <button onclick="closeEvolution()">Awesome!</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="warning-overlay" class="hidden">
+      <h1>⚠️ FOCUS BROKEN</h1>
+      <p>Return to ProPet immediately!</p>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>

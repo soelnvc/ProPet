@@ -1,0 +1,66 @@
+#screen-victory {
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.victory-title {
+  font-size: 2.5rem;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  margin-bottom: 20px;
+  animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reward-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+#reward-pet-img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+#reward-pet-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+#screen-victory button {
+  background: #fff;
+  color: #000;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+  margin-top: 30px;
+  font-weight: 800;
+}
+
+#screen-victory button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

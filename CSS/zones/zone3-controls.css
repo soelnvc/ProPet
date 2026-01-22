@@ -1,0 +1,52 @@
+.zone-controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+#timer-display {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -2px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.progress-wrapper {
+  width: 80%;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+#growth-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--accent-color);
+  transition: width 1s linear, background 1s ease;
+}
+
+.btn-giveup {
+  background: transparent;
+  color: var(--text-color);
+  opacity: 0.5;
+  font-size: 0.8rem;
+  border: 1px solid var(--text-color);
+  padding: 8px 20px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.btn-giveup:hover {
+  opacity: 1;
+  background: rgba(255, 0, 0, 0.1);
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}

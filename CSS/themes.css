@@ -1,0 +1,43 @@
+:root {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --accent-color: #ffffff;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+body.theme-cat {
+  --bg-color: #ffe6f2;
+  background: linear-gradient(180deg, #ffe6f2 0%, #ffffff 100%);
+  --text-color: #5a3e50;
+  --accent-color: #ff80ab;
+  --glass-border: rgba(255, 182, 193, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+}
+
+body.theme-dog {
+  --bg-color: #6d4c41;
+  background: linear-gradient(180deg, #6d4c41 0%, #d7ccc8 100%);
+  --text-color: #3e2723;
+  --accent-color: #8d6e63;
+  --glass-border: rgba(141, 110, 99, 0.4);
+  --glass-bg: rgba(255, 248, 240, 0.5);
+}
+
+body.theme-dragon {
+  --bg-color: #0f0c29;
+  background: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  --text-color: #e0e0e0;
+  --accent-color: #7c4dff;
+  --glass-border: rgba(124, 77, 255, 0.3);
+  --glass-bg: rgba(0, 0, 0, 0.4);
+}
+
+body.theme-lion {
+  --bg-color: #bf953f;
+  background: linear-gradient(180deg, #996515 0%, #fcf6ba 100%);
+  --text-color: #3e2723;
+  --accent-color: #b8860b;
+  --glass-border: rgba(184, 134, 11, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.4);
+}

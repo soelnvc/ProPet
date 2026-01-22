@@ -1,0 +1,13 @@
+#screen-active {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding-top: 80px; 
+    padding-bottom: 20px;
+}
+
+#screen-active.active-screen {
+    display: flex;
+}
